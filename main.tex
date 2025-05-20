@@ -83,6 +83,7 @@
 		\edef\FileName{content/chapter/\i .tex}%
 			\IfFileExists{\FileName}{%
 				\input{\FileName}
+                \setcounter{footnote}{0}
 			}
 			{%
 %				No chapter available
