@@ -3,10 +3,19 @@
 Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW Heidenheim geeignet.
 
 **Inhalt:**
+* [Installieren & Ausführen](#installieren-&-ausführen)
 * [Templatestruktur](#templatestruktur)
 * [Document Types](#document-types)
 * [Komponenten einer Wissenschaftlichen Arbeit](#komponenten-einer-wissenschaftlichen-arbeit)
 * [Contributors](#contributors)
+
+## Installieren & Ausführen
+
+### Installieren via Flake
+- ``nix develop .`` im Repo-Root ausführen
+
+### Ausführen:
+- ``latexmk -pdf -output-directory=build main.tex`` im Repo-Root ausführen
 
 ## Templatestruktur
 
