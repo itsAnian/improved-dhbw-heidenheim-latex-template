@@ -1,18 +1,48 @@
 {
-    description = "LaTeX-Umgebung mit texliveFull";
+  description = "Reusable LaTeX dev shell";
 
-    inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-        flake-utils.url = "github:numtide/flake-utils";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+
+  outputs = { self, nixpkgs, ... } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    devShells.${system}.default = pkgs.mkShell {
+      packages = [
+        (pkgs.texlive.combine {
+          inherit (pkgs.texlive)
+            scheme-small
+            latexmk
+            acronym
+            amsmath
+            babel
+            biblatex
+            bigfoot # or collection-latexextra
+            csquotes
+            enumitem
+            footmisc
+            geometry
+            glossaries
+            hyperref
+            listings
+            microtype
+            nag
+            pdfpages
+            pgf
+            setspace
+            todonotes
+            wrapfig
+            xstring;
+          })
+        pkgs.zathura
+        pkgs.biber
+      ];
+
+      shellHook = ''
+        echo "✅ LaTeX shell ready. Use:"
+        echo "latexmk -pdf -output-directory=build main.tex"
+      '';
     };
-
-    outputs = { self, nixpkgs, flake-utils }:
-        flake-utils.lib.eachDefaultSystem (system:
-                let
-                pkgs = import nixpkgs { inherit system; };
-                in {
-                devShells.default = pkgs.mkShell {
-                packages = [ pkgs.texliveFull pkgs.texlab];
-                };
-                });
+  };
 }
+
