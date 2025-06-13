@@ -80,9 +80,40 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 | linkColor           | Farbe von Verlinkungen                                | 000000 (schwarz)|
 
 ### content
+```latx
+\chapter{Kapitelname}
+...
+```
 
 ### images
 
+```latex
+\begin{figure}[h]
+\centering
+\includegraphics[height=.8\textwidth]{image.png}
+\caption{BeispielImage\footnotemark}
+\end{figure}
+\footnotetext{Fußnote \glcite{Literatur}}
+```
+
+### tables
+
+```latex
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{ | m{5cm} | m{1cm}| m{1cm} | } 
+\hline
+\rowcolor{gray!30}
+cell1 & cell2 & cell3 \\ 
+\hline
+cell7 & cell8 & cell9 \\ 
+\hline
+\end{tabular}
+\end{center}
+\caption{BeispielTabelle}
+\label{Tabelle}
+\end{table}
+```
 
 # Document Types
 
