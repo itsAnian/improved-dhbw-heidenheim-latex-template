@@ -22,9 +22,8 @@ Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW H
 Das Template ist im Wesentlichen in 6 Teile unterteilt:
 
 * main.tex
-* ads/
-* lang/
-* settings/
+* config/
+* config/lang/
 * content/
 * images/
 
@@ -32,29 +31,27 @@ Das Template ist im Wesentlichen in 6 Teile unterteilt:
 
 main.tex ist die Kerndatei des Templates und damit auch die Datei, die kompiliert werden muss. Durch Importe anderer Dateien wird die Dokumentenstruktur beschrieben (kann bei Bedarf geändert werden wenn z.B. kein Sperrvermerk gewünscht wird).
 
-### ads
 
-Im Ordner ads befinden sich folgende vordefinierte Vorlagen, welche nicht angepasst werden müssen (Anpassungen erfolgen automatisch):
+### config/lang
+
+Im Ordner config/lang befinden sich alle notwendigen Übersetzungen.
+
+
+### config
+
+Im Ordner config befinden sich folgende vordefinierte Vorlagen, welche nicht angepasst werden müssen (Anpassungen erfolgen automatisch):
 
 * Deckblatt
 * Eigenständigkeitserklärung
 * Sperrvermerk
 * LaTeX Document Header
+* Style.tex
 
-### lang
+In der Datei style.tex sind grundlegende Einstellungen vordefiniert, welche nicht geändert werden müssen.
 
-Im Ordner lang befinden sich alle notwendigen Übersetzungen.
+### content/documentInfo.tex
 
-### settings
-
-Der Ordner settings beinhaltet zwei Dateien:
-
-* main.tex
-* document.tex
-
-In der Datei main.tex sind grundlegende Einstellungen vordefiniert, welche nicht geändert werden müssen.
-
-In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit gemacht werden:
+In der Datei documentInfo.tex müssen einige Angaben über die zu schreibende Arbeit gemacht werden:
 
 | Variable            | Beschreibung                                          | Mögliche Werte  |
 | ------------------- | ----------------------------------------------------- | --------------- |
@@ -75,6 +72,7 @@ In der Datei document.tex müssen einige Angaben über die zu schreibende Arbeit
 | releaseLocation     | Abgabeort                                             | Heidenheim      |
 | companyName         | Name des Unternehmens in dem der Autor angestellt ist |                 |
 | companyLocation     | Firmensitz                                            |                 |
+| companyLogo         | Firmen Logo                                           |                 |
 | tutor               | Betrieblicher Betreuer der Arbeit                     |                 |
 | evaluator           | Zweitkorrektor der Arbeit                             |                 |
 | linkColor           | Farbe von Verlinkungen                                | 000000 (schwarz)|
@@ -208,10 +206,10 @@ Die Archivdatei wurde zusammen mit der Online-Version dieser Ausarbeitung auf di
 	\>  -- Aufgabenstellung.pdf\\
 	\>  -- Studienarbeit2.pdf\\
 	\>  $\vdash$ \textbf{Latex-Files/}   $\Rightarrow$ \textit{editable \LaTeX~files and other included files for this report}\\ %\llcorner
-	\> \>  $\vdash$  \textbf{ads/}   	\> $\Rightarrow$ \textit{Front- and Backmatter}\\
+	\> \>  $\vdash$  \textbf{config/}   	\> $\Rightarrow$ \textit{Front- and Backmatter}\\
 	\> \>  $\vdash$  \textbf{content/}  \> $\Rightarrow$ \textit{Main part}\\
 	\> \>  $\vdash$  \textbf{images/}   \> $\Rightarrow$ \textit{All used images}\\
-	\> \>  $\vdash$  \textbf{lang/}  \> $\Rightarrow$ \textit{Language files for \LaTeX~template}\\ %\llcorner
+	\> \>  $\vdash$  \textbf{config/lang/}  \> $\Rightarrow$ \textit{Language files for \LaTeX~template}\\ %\llcorner
 \end{tabbing}
 ```
 

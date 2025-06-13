@@ -50,13 +50,13 @@
 }
 
 % Include main settings
-\input{settings/main} 
+\input{config/style} 
 
 % Include document settings
-\input{settings/document}
+\input{content/documentInfo}
 
 % Load language specific Strings
-\input{lang/\documentLanguage}
+\input{config/lang/\documentLanguage}
 
 % Load language specific babel package
 \iflang{de}{\usepackage[english, ngerman]{babel}}
