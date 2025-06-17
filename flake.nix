@@ -20,6 +20,9 @@
             bigfoot # or collection-latexextra
             csquotes
             enumitem
+            catchfile
+            svg
+            transparent
             footmisc
             geometry
             glossaries
@@ -34,13 +37,14 @@
             wrapfig
             xstring;
           })
+        pkgs.inkscape
         pkgs.zathura
         pkgs.biber
       ];
 
       shellHook = ''
         echo "✅ LaTeX shell ready. Use:"
-        echo "latexmk -pdf -output-directory=build main.tex"
+        echo "latexmk -pdf -shell-escape -output-directory=build main.tex"
       '';
     };
   };

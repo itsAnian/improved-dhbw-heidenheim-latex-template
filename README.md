@@ -15,7 +15,7 @@ Dieses LaTeX Template ist für alle Arbeiten der Fakultät Informatik der DHBW H
 - ``nix develop .`` im Repo-Root ausführen
 
 ### Ausführen:
-- ``latexmk -pdf -output-directory=build main.tex`` im Repo-Root ausführen
+- ``latexmk -pdf -shell-escape -output-directory=build main.tex`` im Repo-Root ausführen
 
 ## Templatestruktur
 
@@ -90,6 +90,16 @@ In der Datei documentInfo.tex müssen einige Angaben über die zu schreibende Ar
 \centering
 \includegraphics[height=.8\textwidth]{image.png}
 \caption{BeispielImage\footnotemark}
+\end{figure}
+\footnotetext{Fußnote \glcite{Literatur}}
+```
+
+### svgs
+```latex
+\begin{figure}[h]
+\centering
+\includesvg[height=.8\textwidth]{graphic.svg}
+\caption{Beispiel svg\footnotemark}
 \end{figure}
 \footnotetext{Fußnote \glcite{Literatur}}
 ```
