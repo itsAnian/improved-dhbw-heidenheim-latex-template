@@ -144,6 +144,10 @@ Die Studienarbeit ist eine reine Hochschularbeit. Aus diesem Grund wird der Ort 
 ### Sonstige
 Für andere als die vordefinierten Types kann der Dokumenttyp direkt in das Feld `documentType` eingetragen werden (z.B. Hausarbeit). Unternehmensinformationen werden dann ausgeblendet.
 
+# Custom Commands
+* `\glcite{literatur}` --> Zitiert automatisch "Namen der Autoren (Erscheinungsjahr) \[Link zu Literaturverzeichnis\]"
+* `\gq{text}` --> Der eingetragene Text wird in deutsche Anführungszeichen gesetzt
+
 # Komponenten einer Wissenschaftlichen Arbeit
 
 ## Abstract
